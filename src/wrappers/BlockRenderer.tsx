@@ -3,6 +3,7 @@ import {
   ContentTypes,
   IPageFieldsItem,
   IPageItemFieldsItem,
+  isHistoricalPlace,
   isIPage,
   isIPageFieldsItem,
 } from "@src/types/contentTypes";
@@ -10,7 +11,9 @@ import { IPage } from "@src/types/generated/contentful";
 import ContentSection from "@components/views/ContentSection";
 import PlacePreview from "@components/previews/PlacePreview";
 import PlaceCollection from "@wrappers/PlaceCollection";
+import PlacesMap from "@pages/locationpage";
 import Hero from "@components/views/Hero";
+import DateHeader from "@components/views/DateHeader";
 
 type BlockRendererProps = {
   block: IPage | IPageFieldsItem | IPageItemFieldsItem;
@@ -19,7 +22,9 @@ type BlockRendererProps = {
 const BlockRenderer: React.FC<BlockRendererProps> = ({ block }) => {
   let children: JSX.Element[] = [];
 
-  const getKey = (content: BlockRendererProps['block']) => `${content.sys.contentType}-${content.sys.id}`;
+  const getKey = (content: BlockRendererProps["block"]) => {
+    return `${content.sys.contentType}-${content.sys.id}`;
+  };
 
   if (isIPage(block)) {
     // Render all page elements through BlockRenderer
@@ -57,7 +62,9 @@ const BlockRenderer: React.FC<BlockRendererProps> = ({ block }) => {
 const ContentTypeMap = {
   [ContentTypes.ContentSection]: ContentSection,
   [ContentTypes.HistoricalPlace]: PlacePreview,
+  [ContentTypes.DateHeader]: DateHeader,
   [ContentTypes.PlaceCollection]: PlaceCollection,
+  [ContentTypes.LocationMap]: PlacesMap,
   [ContentTypes.Hero]: Hero,
 };
 

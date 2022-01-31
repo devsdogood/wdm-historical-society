@@ -1,0 +1,53 @@
+.section {
+  max-width: 700px;
+}
+
+.date {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: red;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  /* color: lightblue */
+}
+
+.description {
+  font-size: 18px;
+  color: #444444;
+  margin-bottom: 32px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.image {
+  border-radius: 16px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 16px;
+}
+
+.links a {
+  color: purple;
+  padding: 0px 10px 0px 0px;
+  word-wrap: normal;
+  display: inline-block;
+}
+
+.hr {
+  border: 1px solid #eaeaea;
+  margin: 64px 0 32px 0;
+  width: 100%;
+}
+
+.icon {
+  margin-left: 4px;
+  margin-bottom: 0px;
+}

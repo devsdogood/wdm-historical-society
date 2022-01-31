@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import { IContentSection, IHero, IPage, IPageFields } from "@src/types/generated/contentful";
+import { IContentSection, IHero, IHistoricalPlace, IHistoricalPlaceFields, IPage, IPageFields } from "@src/types/generated/contentful";
 
 /**
  * `contentful-typescript-codegen` doesn't generate an enum of content types
@@ -13,6 +13,8 @@ export enum ContentTypes {
     PlaceCollection = "placeCollection",
     NavigationItem = 'navigationItem',
     NavigationMenu = 'navigationMenu',
+    DateHeader = 'dateHeader',
+    LocationMap = 'locationMap',
     Page = 'page',
 };
 
@@ -35,3 +37,5 @@ export type IPageItemFieldsItem = IEntryFieldsItem<IPageFieldsItem> | IContentSe
 export const isIPage = (block: IPage | IPageFieldsItem | IPageItemFieldsItem): block is IPage => (block as IPage).sys?.contentType?.sys?.id === 'page';
 
 export const isIPageFieldsItem = (block: IPageFieldsItem | IPageItemFieldsItem): block is IPageFieldsItem => Array.isArray((block as IPageFieldsItem).fields?.content);
+
+export const isHistoricalPlace = (block: IHistoricalPlace): block is IHistoricalPlace => (block as IHistoricalPlace).sys?.contentType?.sys?.id === 'historicalPlace';

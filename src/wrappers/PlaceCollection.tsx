@@ -1,6 +1,8 @@
+import styles from '../styles/PlaceCollection.module.css';
+
 const PlaceCollection: React.FC = ({ children }) => {
     return (
-        <div style={{border: 'red 1px solid'}}>
+        <div className={styles.wrapper}>
             {children}
         </div>
     );

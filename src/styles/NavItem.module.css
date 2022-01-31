@@ -1,0 +1,14 @@
+.link {
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 16px 8px;
+}
+
+.nav {
+  background-color: #902d38;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 16px 0;
+}

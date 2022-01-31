@@ -1,4 +1,5 @@
 import { IHero } from "@src/types/generated/contentful";
+import styles from '../../styles/Hero.module.css';
 
 type HeroProps = {
   entry: IHero;
@@ -7,8 +8,9 @@ type HeroProps = {
 const Hero: React.FC<HeroProps> = ({ entry }) => {
   return (
     <>
-      <b>Hero Component!</b>{entry.fields.image.fields.file.url} image with
-      banner text {entry.fields.bannerText}
+      <h1 className={styles.header}>West Des Moines Historical Tour</h1>
+      <p className={styles.paragraph}>{entry.fields.bannerText}</p>
+    
     </>
   );
 };

@@ -63,6 +63,8 @@ export interface IHero extends Entry<IHeroFields> {
   };
 }
 
+
+
 export interface IHistoricalPlaceFields {
   /** Title */
   title: string;
@@ -71,14 +73,22 @@ export interface IHistoricalPlaceFields {
   slug: string;
 
   /** Main Image */
-  mainImage: Asset;
+  mainImage?: Asset | String;
 
   /** Location */
   location?: string | undefined;
 
+
   /** Content */
   content: IContentSection;
+
+  /** Date */
+  date?: string | undefined;
+
+  /** Coordinates */
+  coordinates: any;
 }
+
 
 export interface IHistoricalPlace extends Entry<IHistoricalPlaceFields> {
   sys: {
@@ -187,12 +197,18 @@ export interface IPage extends Entry<IPageFields> {
   };
 }
 
+export interface IDateHeader {
+  /** Date */
+  date: string;
+}
+
+
 export interface IPlaceCollectionFields {
   /** Title */
   title: string;
 
   /** Places */
-  content: IHistoricalPlace[];
+  content: (IHistoricalPlace | IDateHeader)[];
 }
 
 export interface IPlaceCollection extends Entry<IPlaceCollectionFields> {
@@ -205,6 +221,48 @@ export interface IPlaceCollection extends Entry<IPlaceCollectionFields> {
     contentType: {
       sys: {
         id: "placeCollection";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface LocationMapFields {
+  locations: IHistoricalPlace[]
+}
+
+export interface LocationMap extends Entry<LocationMapFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "locationMap";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface DateHeaderFields {
+  date: string;
+}
+
+export interface DateHeader extends Entry<DateHeaderFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "dateHeader";
         linkType: "ContentType";
         type: "Link";
       };

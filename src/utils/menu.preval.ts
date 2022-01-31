@@ -5,8 +5,8 @@ import getContentful from '@utils/contentful';
 const getMenu = async () => {
     const contentful = await getContentful();
     const menuQuery = await contentful.getEntries({ content_type: ContentTypes.NavigationMenu, include: 2 });
-    const menu = menuQuery.items?.[0] || {};
 
+    const menu = menuQuery.items?.[0] || {};
     return menu.fields;
 }
 

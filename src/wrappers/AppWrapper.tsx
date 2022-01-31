@@ -10,7 +10,7 @@ const AppLayout: React.FC = ({ children }) => {
     return (
         <>
             <NavigationMenu menuItems={menuItems} />
-            {children}
+            <section style={{'maxWidth': '1000px', 'margin': '0 auto'}}>{children}</section>
         </>
     );
 };

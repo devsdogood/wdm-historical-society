@@ -1,0 +1,29 @@
+.pagenotfound {
+  width: 300px;
+  font-size: 25px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: auto;
+}
+.center {
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+.image {
+  display: block;
+  width: 200px;
+  height:auto;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+.heading {
+  font-size: 64px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
