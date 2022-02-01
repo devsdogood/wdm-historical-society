@@ -11,7 +11,7 @@ import { IPage } from "@src/types/generated/contentful";
 import ContentSection from "@components/views/ContentSection";
 import PlacePreview from "@components/previews/PlacePreview";
 import PlaceCollection from "@wrappers/PlaceCollection";
-import PlacesMap from "@pages/locationpage";
+import PlacesMap from "@components/views/PlacesMap";
 import Hero from "@components/views/Hero";
 import DateHeader from "@components/views/DateHeader";
 
